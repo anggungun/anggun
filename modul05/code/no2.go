@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+func bintang(n int, i int) {
+	if i > n {
+		return
+	}
+	fmt.Println(string(make([]byte, i, i)))
+	for j := 0; j < i; j++ {
+		fmt.Print("*")
+	}
+	fmt.Println()
+	bintang(n, i+1)
+}
+
+func main() {
+	var n int
+	fmt.Scan(&n)
+	bintang(n, 1)
+}
